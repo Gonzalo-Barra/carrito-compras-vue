@@ -1,6 +1,6 @@
-import axios from "axios";
 import Vue from "vue";
 import Vuex from "vuex";
+import pizzaData from "../utils/pizzas.json";
 
 Vue.use(Vuex);
 
@@ -22,7 +22,7 @@ export default new Vuex.Store({
   },
   actions: {
     async get_Pizzas({ commit }) {
-      const { data: pizzas } = await axios.get("/pizzas.json");
+      const  pizzas = pizzaData;
       commit("GET_PIZZAS", pizzas);
     },
 
